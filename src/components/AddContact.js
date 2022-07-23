@@ -8,18 +8,18 @@ class AddContact extends React.Component {
 
      add = (e) => {
       e.preventDefault();
-      if (this.state.name === "" && this.state.emai === "") {
+      if (this.state.name === "" && this.state.email === "") {
         alert("Alll the fields are mendatory!")
         return
       }
       this.props.AddContactHandler(this.state);
-      this.setState({name:"", emai:""});
+      this.setState({name:"", email:""});
      };
     render() { 
         return (
           <div>
             <h2 className="font-bold text-3xl mt-14 ml-24 mr-24 mb-4 ">
-              Add Contact
+              Add Email
             </h2>
             <form className="mt-2 ml-24 mr-24 mb-2" onSubmit={this.add}>
               <div>
@@ -49,7 +49,7 @@ class AddContact extends React.Component {
                 />
               </div>
               <button className="text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center m-10">
-                Add Contact
+                Add Email
               </button>
             </form>
           </div>

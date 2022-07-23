@@ -3,16 +3,24 @@ import trash from "../images/trash.png"
 import person from "../images/person.png"
 
 const ContactCard = (props) =>{
-    const {name, email} = props.contact;
+    const {name, email, id} = props.contact;
     return (
-      <div >
-        <img  className="flex float-left ml-10" src={person} alt="trash"></img>
-        <div className=" block w-2/4  ml-28   ">
-        <img  className="flex float-right" src={trash} alt="trash"></img>
-        <div className="text-xl w-10  ">{name}</div>
-        <div className="text-xl w-10  ">{email}</div>
+      <div>
+        <div className="flex  justify-between md:w-2/6  bg-blue-200 m-4">
+          <img
+            className="flex float-left ml-10"
+            src={person}
+            alt="person"
+          ></img>
+
+          <div className="w-72">
+            <div className="text-xl  ">{name}</div>
+            <div className="text-xl  ">{email}</div>
+          </div>
+
+          <img  src={trash} alt="trash" onClick={() => props.clickHandler(id)}></img>
         </div>
-        <hr/ >
+        <hr />
       </div>
     );
 };
